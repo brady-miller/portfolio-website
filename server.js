@@ -5,7 +5,8 @@
 
 // Require all dependencies
 const express = require('express');
-const ejs = require('ejs');
+const path = require('path');
+const expressStaticGzip = require('express-static-gzip');
 
 // Create the express app
 const app = express();
@@ -14,14 +15,15 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // App configuration
-app.set('view engine', ejs); // Use ejs for templating
-express.static('public'); // Use the public folder to server assets
+app.use(express.static(path.join(__dirname, 'dist'))); // Use the public folder to server assets
+app.set('view engine', 'html');
+// app.use('*', expressStaticGzip('dist'));
 
 // Routes
 
 // Root url, shows home page (www.example.com/)
 app.get('/', (req, res) => {
-    res.render('home');
+    res.render('index.html');
 });
 
 // Starting the server

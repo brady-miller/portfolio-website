@@ -1,0 +1,9 @@
+require('./js/parallax');
+require('./css/main.css');
+require('./img/portfolio-01.jpg');
+require('./img/portfolio-02.jpg');
+require('./img/portfolio-03.jpg');
+require('./img/portfolio-04.jpg');
+require('./img/portfolio-05.jpg');
+require('./img/portfolio-06.jpg');
+require('./img/logo.png');
